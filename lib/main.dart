@@ -20,6 +20,7 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: MyAppBar(),
+      bottomNavigationBar: MyBottomNavBar(),
     );
   }
 }
@@ -57,4 +58,23 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget{
       ],
     );
   }
+}
+
+class MyBottomNavBar extends StatelessWidget implements PreferredSizeWidget {
+  const MyBottomNavBar({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return BottomNavigationBar(
+        items: [
+          BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home', tooltip: 'Home'),
+          BottomNavigationBarItem(icon: Icon(Icons.account_circle), label: 'Account', tooltip: 'Account'),
+          BottomNavigationBarItem(icon: Icon(Icons.add_a_photo_outlined), label: 'Image', tooltip: 'Image'),
+        ]
+    );
+  }
+
+  @override
+  // TODO: implement preferredSize
+  Size get preferredSize => throw UnimplementedError();
 }
