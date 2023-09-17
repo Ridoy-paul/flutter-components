@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  return runApp(MyApp());
+  return  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -66,10 +66,12 @@ class MyBottomNavBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return BottomNavigationBar(
+      currentIndex: 0,
         items: [
           BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home', tooltip: 'Home'),
           BottomNavigationBarItem(icon: Icon(Icons.account_circle), label: 'Account', tooltip: 'Account'),
           BottomNavigationBarItem(icon: Icon(Icons.add_a_photo_outlined), label: 'Image', tooltip: 'Image'),
+          BottomNavigationBarItem(icon: Icon(Icons.ac_unit), label: 'Cart', tooltip: 'Cart'),
         ]
     );
   }
