@@ -34,7 +34,7 @@ class HomePage extends StatelessWidget {
 
           },
         ),
-        actions: [
+        actions: <Widget>[
           IconButton(
               onPressed: (){},
               tooltip: 'Cart',
