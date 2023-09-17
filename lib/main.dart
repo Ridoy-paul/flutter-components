@@ -1,4 +1,4 @@
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
 void main() {
   return runApp(MyApp());
@@ -7,9 +7,22 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
-    throw UnimplementedError();
+    return MaterialApp(
+      home: HomePage(),
+    );
   }
-  
-  
+}
+
+class HomePage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("My AppBar"),
+        centerTitle: true,
+        backgroundColor: Colors.amberAccent,
+      ),
+    );
+  }
+
 }
