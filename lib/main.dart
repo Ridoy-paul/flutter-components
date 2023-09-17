@@ -5,6 +5,8 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -15,16 +17,19 @@ class MyApp extends StatelessWidget {
 }
 
 class HomePage extends StatelessWidget {
+  const HomePage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text("My AppBar"),
         centerTitle: true,
-        backgroundColor: Colors.amberAccent,
+        backgroundColor: Colors.teal,
 
         leading: IconButton(
           icon: Icon(Icons.menu),
+          tooltip: 'Menu',
           onPressed: () {
 
           },
@@ -32,17 +37,19 @@ class HomePage extends StatelessWidget {
         actions: [
           IconButton(
               onPressed: (){},
+              tooltip: 'Cart',
               icon: Icon(Icons.shopping_cart)
           ),
           IconButton(
               onPressed: (){},
+              tooltip: 'Contact',
               icon: Icon(Icons.wifi_calling_sharp)
           ),
           IconButton(
               onPressed: (){},
+              tooltip: 'Account',
               icon: Icon(Icons.account_circle)
           ),
-
         ],
       ),
     );
