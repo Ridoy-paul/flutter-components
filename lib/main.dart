@@ -6,11 +6,9 @@ void main() {
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
       home: HomePage(),
     );
   }
@@ -18,40 +16,45 @@ class MyApp extends StatelessWidget {
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text("My AppBar"),
-        centerTitle: true,
-        backgroundColor: Colors.teal,
+      appBar: MyAppBar(),
+    );
+  }
+}
 
-        leading: IconButton(
-          icon: Icon(Icons.menu),
-          tooltip: 'Menu',
+class MyAppBar extends StatelessWidget implements PreferredSizeWidget{
+  Size get preferredSize => Size.fromHeight(kToolbarHeight);
+  const MyAppBar({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return AppBar(
+      title: Text('Bottom Nav Bar'),
+      leading: IconButton(
+        icon: Icon(Icons.menu),
+        onPressed: () {
+
+        },
+      ),
+      centerTitle: false,
+      actions: [
+        IconButton(
+          icon: Icon(Icons.call),
+          tooltip: 'Contact',
           onPressed: () {
 
           },
         ),
-        actions: <Widget>[
-          IconButton(
-              onPressed: (){},
-              tooltip: 'Cart',
-              icon: Icon(Icons.shopping_cart)
-          ),
-          IconButton(
-              onPressed: (){},
-              tooltip: 'Contact',
-              icon: Icon(Icons.wifi_calling_sharp)
-          ),
-          IconButton(
-              onPressed: (){},
-              tooltip: 'Account',
-              icon: Icon(Icons.account_circle)
-          ),
-        ],
-      ),
+        IconButton(
+          icon: Icon(Icons.account_circle),
+          tooltip: 'Account',
+          onPressed: () {
+
+          },
+        )
+      ],
     );
   }
 }
