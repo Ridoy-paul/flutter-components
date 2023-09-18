@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  return  runApp(MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -16,67 +17,26 @@ class MyApp extends StatelessWidget {
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: MyAppBar(),
-      bottomNavigationBar: MyBottomNavBar(),
-    );
-  }
-}
-
-class MyAppBar extends StatelessWidget implements PreferredSizeWidget{
-  Size get preferredSize => Size.fromHeight(kToolbarHeight);
-  const MyAppBar({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return AppBar(
-      title: Text('Bottom Nav Bar'),
-      leading: IconButton(
-        icon: Icon(Icons.menu),
-        onPressed: () {
-
-        },
+      appBar: AppBar(
+        title: Text("Flutter Container"),
+        backgroundColor: Colors.teal,
+        centerTitle: true,
       ),
-      centerTitle: false,
-      actions: [
-        IconButton(
-          icon: Icon(Icons.call),
-          tooltip: 'Contact',
-          onPressed: () {
+      body: SafeArea(
+        child: Container(
+          height: 150.0,
+          width: 300.0,
 
-          },
+          decoration: BoxDecoration(
+            color: Colors.green,
+          ),
         ),
-        IconButton(
-          icon: Icon(Icons.account_circle),
-          tooltip: 'Account',
-          onPressed: () {
-
-          },
-        )
-      ],
+      ),
     );
   }
 }
 
-class MyBottomNavBar extends StatelessWidget implements PreferredSizeWidget {
-  const MyBottomNavBar({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return BottomNavigationBar(
-      currentIndex: 0,
-        items: <BottomNavigationBarItem>[
-          BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home', tooltip: 'Home'),
-          BottomNavigationBarItem(icon: Icon(Icons.account_circle), label: 'Account', tooltip: 'Account'),
-          BottomNavigationBarItem(icon: Icon(Icons.add_a_photo_outlined), label: 'Image', tooltip: 'Image'),
-          BottomNavigationBarItem(icon: Icon(Icons.ac_unit), label: 'Cart', tooltip: 'Cart'),
-        ]
-    );
-  }
-
-  @override
-  // TODO: implement preferredSize
-  Size get preferredSize => throw UnimplementedError();
-}
