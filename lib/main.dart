@@ -30,7 +30,15 @@ class HomePage extends StatelessWidget {
         child: Container(
           height: 150.0,
           width: 300.0,
-
+          alignment: Alignment.center,
+          child: Container(
+            height: 80.0,
+            width: 80.0,
+            decoration: BoxDecoration(
+              shape: BoxShape.circle,
+              color: Colors.red,
+            ),
+          ),
           decoration: BoxDecoration(
             color: Colors.green,
           ),
