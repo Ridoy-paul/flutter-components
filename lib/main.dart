@@ -26,37 +26,63 @@ class HomePage extends StatelessWidget {
         title: Text("Row & Column"),
       ),
       body: SafeArea(
-        child: Container(
-          padding: EdgeInsets.all(5.0),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              Container(
-                // height: MediaQuery.of(context).size.height * .2,
-                width: MediaQuery.of(context).size.width * 0.33,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(15), // Adjust border radius as needed
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.black.withOpacity(0.3), // Shadow color
-                      spreadRadius: 5, // Spread radius
-                      blurRadius: 10, // Blur radius
-                      offset: Offset(0, 3), // Offset of the shadow
+        child: SingleChildScrollView(
+          child: Container(
+            padding: EdgeInsets.all(5.0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                Container(
+                  // height: MediaQuery.of(context).size.height * .2,
+                  width: MediaQuery.of(context).size.width * 0.30,
+                  padding: EdgeInsets.all(2),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(15), // Adjust border radius as needed
+                  ),
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(15),
+                    child: Image.network(
+                      "https://avatars.githubusercontent.com/u/53790501?v=4",
+                      fit: BoxFit.cover,
                     ),
-                  ],
-                ),
-                
-                child: ClipRect(
-                  //borderRadius: BorderRadius.circular(15),
-                  child: Image.network(
-                    "https://avatars.githubusercontent.com/u/53790501?v=4",
-                    fit: BoxFit.cover,
                   ),
                 ),
-              ),
+                Container(
+                  // height: MediaQuery.of(context).size.height * .2,
+                  width: MediaQuery.of(context).size.width * 0.30,
+                  padding: EdgeInsets.all(2),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(15), // Adjust border radius as needed
+                  ),
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(15),
+                    child: Image.network(
+                      "https://avatars.githubusercontent.com/u/53790501?v=4",
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                ),
+                Container(
+                  // height: MediaQuery.of(context).size.height * .2,
+                  width: MediaQuery.of(context).size.width * 0.30,
+                  padding: EdgeInsets.all(2),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(15), // Adjust border radius as needed
+                  ),
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(15),
+                    child: Image.network(
+                      "https://avatars.githubusercontent.com/u/53790501?v=4",
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                ),
 
 
-            ],
+
+
+              ],
+            ),
           ),
         ),
       ),
