@@ -45,6 +45,7 @@ class HomePage extends StatelessWidget {
                     ),
                   ],
                 ),
+                
                 child: ClipRect(
                   //borderRadius: BorderRadius.circular(15),
                   child: Image.network(
@@ -53,7 +54,7 @@ class HomePage extends StatelessWidget {
                   ),
                 ),
               ),
-              
+
 
             ],
           ),
