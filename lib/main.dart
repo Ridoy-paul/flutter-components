@@ -23,55 +23,43 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Flutter Container"),
-        backgroundColor: Colors.teal,
-        centerTitle: true,
+        title: Text("Row & Column"),
       ),
       body: SafeArea(
-        child: Column(
-          children: [
-            Center(
-              child: Container(
-                height: 150,
-                width: MediaQuery.of(context).size.width * 0.9,
-                margin: EdgeInsets.all(10.0),
-                color: Colors.green,
-                alignment: Alignment.center,
-                
-                child: Container(
-                  height: 80.0,
-                  width: 80.0,
-                  decoration: BoxDecoration(
-                    shape: BoxShape.circle,
-                    color: Colors.red,
+        child: Container(
+          padding: EdgeInsets.all(5.0),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              Container(
+                // height: MediaQuery.of(context).size.height * .2,
+                width: MediaQuery.of(context).size.width * 0.33,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(15), // Adjust border radius as needed
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.black.withOpacity(0.3), // Shadow color
+                      spreadRadius: 5, // Spread radius
+                      blurRadius: 10, // Blur radius
+                      offset: Offset(0, 3), // Offset of the shadow
+                    ),
+                  ],
+                ),
+                child: ClipRect(
+                  //borderRadius: BorderRadius.circular(15),
+                  child: Image.network(
+                    "https://avatars.githubusercontent.com/u/53790501?v=4",
+                    fit: BoxFit.cover,
                   ),
-
                 ),
               ),
-            )
-          ],
-        ),
-        /*
-        child: Container(
-          height: 150.0,
-          width: 300.0,
-          margin: EdgeInsets.only(left: 20.0, top: 20.0),
-          alignment: Alignment.center,
-          child: Container(
-            height: 80.0,
-            width: 80.0,
+              
 
-            decoration: BoxDecoration(
-              shape: BoxShape.circle,
-              color: Colors.red,
-            ),
-          ),
-          decoration: BoxDecoration(
-            color: Colors.green,
+            ],
           ),
         ),
-        */
       ),
+
     );
   }
 }
