@@ -19,13 +19,27 @@ class MyApp extends StatelessWidget {
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
 
+  myAlertDialog(context) {
+    return showDialog(
+        context: context,
+        builder: (BuildContext context) {
+          return Expanded(
+              child: AlertDialog(
+                title: Text("Alert"),
+                content: Text("Do you want to delete?"),
+              ),
+          );
+        }
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
 
     ButtonStyle styleOne = ElevatedButton.styleFrom(
       padding: EdgeInsets.fromLTRB(30, 2, 30, 2),
       foregroundColor: Colors.white,
-      backgroundColor: Colors.red,
+      backgroundColor: Colors.deepPurpleAccent,
       textStyle: TextStyle(
         letterSpacing: 2,
         fontSize: 15,
@@ -35,24 +49,12 @@ class HomePage extends StatelessWidget {
       )
     );
 
-    ButtonStyle outlinedButtonStyle = OutlinedButton.styleFrom(
-      padding: EdgeInsets.fromLTRB(25, 4, 25, 4),
-      foregroundColor: Colors.black,
-        side: BorderSide(color: Colors.red),
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(30.0),
-      ),
-      textStyle: TextStyle(
-        fontSize: 18,
-        letterSpacing: 2,
-      )
-
-    );
-
     return Scaffold(
       appBar: AppBar(
-        title: Text('Buttons in Flutter'),
-        backgroundColor: Colors.red,
+        title: Text('Alert Dialog in Flutter'),
+        backgroundColor: Colors.deepPurpleAccent,
+        centerTitle: false,
+        leading: Icon(Icons.menu),
       ),
       body: SafeArea(
         child: Container(
@@ -65,16 +67,13 @@ class HomePage extends StatelessWidget {
                   children: [
                     SizedBox(height: MediaQuery.of(context).size.height * 0.3,),
                     ElevatedButton(
-                        onPressed: (){},
+                        onPressed: (){
+                          myAlertDialog(context);
+                        },
                         //icon: Icon(Icons.card_travel)
                         style: styleOne,
-
-                        child: Text('Elevated Button')
+                        child: Text('Alert Dialog')
                     ),
-                    SizedBox(height: 10,),
-                    TextButton(onPressed: () {}, child: Text("Text Button")),
-                    SizedBox(height: 10,),
-                    OutlinedButton(onPressed: (){}, style: outlinedButtonStyle, child: Text("Outlined Button")),
                   ],
                 )
               ],
