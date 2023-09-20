@@ -27,17 +27,31 @@ class HomePage extends StatelessWidget {
       foregroundColor: Colors.white,
       backgroundColor: Colors.red,
       textStyle: TextStyle(
-        letterSpacing: 4,
+        letterSpacing: 2,
+        fontSize: 15,
       ),
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(30.0),
+      )
+    );
+
+    ButtonStyle outlinedButtonStyle = OutlinedButton.styleFrom(
+      padding: EdgeInsets.fromLTRB(25, 4, 25, 4),
+      foregroundColor: Colors.black,
+        side: BorderSide(color: Colors.red),
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(30.0),
+      ),
+      textStyle: TextStyle(
+        fontSize: 18,
+        letterSpacing: 2,
       )
 
     );
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('Buttons'),
+        title: Text('Buttons in Flutter'),
         backgroundColor: Colors.red,
       ),
       body: SafeArea(
@@ -54,11 +68,12 @@ class HomePage extends StatelessWidget {
                         //icon: Icon(Icons.card_travel)
                         style: styleOne,
 
-                        child: Text('Submit')
+                        child: Text('Elevated Button')
                     ),
-                    TextButton(onPressed: () {}, child: Text("Go to link")),
-                    OutlinedButton(onPressed: (){}, child: Text("Outline")),
-
+                    SizedBox(height: 10,),
+                    TextButton(onPressed: () {}, child: Text("Text Button")),
+                    SizedBox(height: 10,),
+                    OutlinedButton(onPressed: (){}, style: outlinedButtonStyle, child: Text("Outlined Button")),
                   ],
                 )
               ],
