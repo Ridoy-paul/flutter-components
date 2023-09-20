@@ -57,11 +57,23 @@ class HomePage extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('Alert Dialog in Flutter'),
-        backgroundColor: Colors.deepPurpleAccent,
+        title: Text('Form Input in Flutter'),
+        backgroundColor: Colors.deepOrangeAccent,
         centerTitle: false,
         leading: Icon(Icons.menu),
+        actions: [
+          Container(
+            margin: EdgeInsets.all(7),
+            padding: EdgeInsets.all(2),
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(10),
+            ),
+              child: IconButton(onPressed: (){}, icon: Icon(Icons.add_a_photo_outlined), color: Colors.black,)
+          ),
+        ],
       ),
+
       body: SafeArea(
         child: Container(
           padding: EdgeInsets.fromLTRB(2, 4, 2, 4),
