@@ -27,6 +27,12 @@ class HomePage extends StatelessWidget {
               child: AlertDialog(
                 title: Text("Alert"),
                 content: Text("Do you want to delete?"),
+                actions: [
+                  ElevatedButton(onPressed: (){
+                    Navigator.of(context).pop();
+                  }, child: Text("No")),
+                  ElevatedButton(onPressed: (){}, child: Text("Yes")),
+                ],
               ),
           );
         }
