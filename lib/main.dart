@@ -90,7 +90,10 @@ class HomePage extends StatelessWidget {
                     decoration: InputDecoration(
                       labelText: "First name",
                       border: OutlineInputBorder(),
-                      focusedBorder: OutlineInputBorder(),
+                      focusedBorder: OutlineInputBorder(
+                        borderSide: BorderSide(color: Colors.deepOrangeAccent),
+                        borderRadius: BorderRadius.all(Radius.circular(15)),
+                      ),
                     ),
                   ),
                 ),
