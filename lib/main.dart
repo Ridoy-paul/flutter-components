@@ -63,6 +63,7 @@ class HomePage extends StatelessWidget {
               children: [
                 Column(
                   children: [
+                    SizedBox(height: MediaQuery.of(context).size.height * 0.3,),
                     ElevatedButton(
                         onPressed: (){},
                         //icon: Icon(Icons.card_travel)
