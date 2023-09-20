@@ -45,7 +45,8 @@ class HomePage extends StatelessWidget {
     ButtonStyle styleOne = ElevatedButton.styleFrom(
       padding: EdgeInsets.fromLTRB(30, 2, 30, 2),
       foregroundColor: Colors.white,
-      backgroundColor: Colors.deepPurpleAccent,
+      backgroundColor: Colors.deepOrangeAccent,
+      minimumSize: Size(double.infinity, 50),
       textStyle: TextStyle(
         letterSpacing: 2,
         fontSize: 15,
@@ -57,19 +58,20 @@ class HomePage extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('Form Input in Flutter'),
+        title: Text('Form Input', style: TextStyle(fontSize: 20),),
         backgroundColor: Colors.deepOrangeAccent,
+
         centerTitle: false,
         leading: Icon(Icons.menu),
         actions: [
           Container(
             margin: EdgeInsets.all(7),
-            padding: EdgeInsets.all(2),
+            padding: EdgeInsets.all(0),
             decoration: BoxDecoration(
               color: Colors.white,
               borderRadius: BorderRadius.circular(10),
             ),
-              child: IconButton(onPressed: (){}, icon: Icon(Icons.add_a_photo_outlined), color: Colors.black,)
+              child: IconButton(onPressed: (){}, icon: Icon(Icons.add_a_photo_outlined), color: Colors.deepPurple,)
           ),
         ],
       ),
@@ -78,22 +80,62 @@ class HomePage extends StatelessWidget {
         child: Container(
           padding: EdgeInsets.fromLTRB(2, 4, 2, 4),
           child: SingleChildScrollView(
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Column(
-                  children: [
-                    SizedBox(height: MediaQuery.of(context).size.height * 0.3,),
-                    ElevatedButton(
-                        onPressed: (){
-                          myAlertDialog(context);
-                        },
-                        //icon: Icon(Icons.card_travel)
-                        style: styleOne,
-                        child: Text('Alert Dialog')
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 8, vertical: 10),
+                  child: TextField(
+                    keyboardType: TextInputType.text,
+                    decoration: InputDecoration(
+                      labelText: "First name",
+                      border: OutlineInputBorder(),
+                      focusedBorder: OutlineInputBorder(),
                     ),
-                  ],
-                )
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 8, vertical: 10),
+                  child: TextField(
+                    keyboardType: TextInputType.text,
+                    decoration: InputDecoration(
+                      labelText: "Last Name",
+                      border: OutlineInputBorder(),
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 8, vertical: 10),
+                  child: TextField(
+                    keyboardType: TextInputType.phone,
+                    decoration: InputDecoration(
+                      labelText: "Enter your Phone",
+                      border: OutlineInputBorder(),
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 8, vertical: 10),
+                  child: TextField(
+                    keyboardType: TextInputType.emailAddress,
+                    decoration: InputDecoration(
+                      labelText: "Enter your Email",
+                      border: OutlineInputBorder(),
+                    ),
+                  ),
+                ),
+
+                Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 8, vertical: 10),
+                  child: ElevatedButton(
+                      onPressed: (){
+                        myAlertDialog(context);
+                      },
+                      //icon: Icon(Icons.card_travel)
+                      style: styleOne,
+                      child: Text('Submit')
+                  ),
+                ),
               ],
             ),
           ),
