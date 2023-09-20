@@ -21,6 +21,20 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
+    ButtonStyle styleOne = ElevatedButton.styleFrom(
+      padding: EdgeInsets.fromLTRB(30, 2, 30, 2),
+      foregroundColor: Colors.white,
+      backgroundColor: Colors.red,
+      textStyle: TextStyle(
+        letterSpacing: 4,
+      ),
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(30.0),
+      )
+
+    );
+
     return Scaffold(
       appBar: AppBar(
         title: Text('Buttons'),
@@ -33,10 +47,17 @@ class HomePage extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Row(
+                Column(
                   children: [
-                    ElevatedButton(onPressed: (){}, child: Text('Submit')),
+                    ElevatedButton(
+                        onPressed: (){},
+                        //icon: Icon(Icons.card_travel)
+                        style: styleOne,
+
+                        child: Text('Submit')
+                    ),
                     TextButton(onPressed: () {}, child: Text("Go to link")),
+                    OutlinedButton(onPressed: (){}, child: Text("Outline")),
 
                   ],
                 )
