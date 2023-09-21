@@ -127,7 +127,6 @@ class HomePage extends StatelessWidget {
                     ),
                   ),
                 ),
-
                 
                 Padding(
                   padding: EdgeInsets.symmetric(horizontal: 8, vertical: 10),
