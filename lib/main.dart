@@ -16,8 +16,16 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class HomePage extends StatelessWidget {
-  const HomePage({super.key});
+class HomePage extends StatelessWidget{
+
+  var myItem = [
+    {"img" : "https://cdn-ipieb.nitrocdn.com/XUuAIAbfSYJmvfScsdokbEdfsfJmcNEb/assets/images/optimized/rev-9f5d252/wp-content/uploads/2023/05/B2.png", "title" : "Ridoy Paul"},
+    {"img" : "https://cdn-ipieb.nitrocdn.com/XUuAIAbfSYJmvfScsdokbEdfsfJmcNEb/assets/images/optimized/rev-9f5d252/wp-content/uploads/2023/05/Untitled-design-2.jpg", "title" : "Jago news"},
+    {"img" : "https://cdn-ipieb.nitrocdn.com/XUuAIAbfSYJmvfScsdokbEdfsfJmcNEb/assets/images/optimized/rev-9f5d252/wp-content/uploads/2023/05/Untitled-design-1.jpg", "title" : "Somoy News"},
+    {"img" : "https://cdn-ipieb.nitrocdn.com/XUuAIAbfSYJmvfScsdokbEdfsfJmcNEb/assets/images/optimized/rev-9f5d252/wp-content/uploads/2023/05/Untitled-design-7.jpg", "title" : "Nasa"},
+    {"img" : "https://cdn-ipieb.nitrocdn.com/XUuAIAbfSYJmvfScsdokbEdfsfJmcNEb/assets/images/optimized/rev-9f5d252/wp-content/uploads/2023/05/Untitled-design-4.jpg", "title" : "Basis Soft Expo."},
+    {"img" : "https://cdn-ipieb.nitrocdn.com/XUuAIAbfSYJmvfScsdokbEdfsfJmcNEb/assets/images/optimized/rev-9f5d252/wp-content/uploads/2023/05/Untitled-design-6.jpg", "title" : "Sodesh Bidesh"},
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -39,8 +47,7 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text('List View Builder', style: TextStyle(fontSize: 20),),
-        backgroundColor: Colors.deepOrangeAccent,
-
+        backgroundColor: Colors.pink,
         centerTitle: false,
         leading: Icon(Icons.menu),
         actions: [
@@ -56,21 +63,27 @@ class HomePage extends StatelessWidget {
         ],
       ),
 
-      body: SafeArea(
-        child: Container(
-          padding: EdgeInsets.fromLTRB(2, 4, 2, 4),
-          child: SingleChildScrollView(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: <Widget>[
+      body: ListView.builder(
+          itemCount: myItem.length,
+          itemBuilder: (context, index){
+            return GestureDetector(
+              onTap: () {
 
-
-              ],
-            ),
-          ),
-        ),
+              },
+              child: Container(
+                margin: EdgeInsets.all(8.0),
+                width: double.infinity,
+                height: 200.0,
+                child: Image.network(
+                    myItem[index]['img']!,
+                  fit: BoxFit.fill,
+                ),
+              ),
+            );
+          }
       ),
     );
   }
+
 }
 
