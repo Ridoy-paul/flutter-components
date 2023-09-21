@@ -19,26 +19,6 @@ class MyApp extends StatelessWidget {
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
 
-  myAlertDialog(context) {
-    return showDialog(
-        context: context,
-        builder: (BuildContext context) {
-          return Expanded(
-              child: AlertDialog(
-                title: Text("Alert"),
-                content: Text("Do you want to delete?"),
-                actions: [
-                  ElevatedButton(onPressed: (){
-                    Navigator.of(context).pop();
-                  }, child: Text("No")),
-                  ElevatedButton(onPressed: (){}, child: Text("Yes")),
-                ],
-              ),
-          );
-        }
-    );
-  }
-
   @override
   Widget build(BuildContext context) {
 
@@ -58,7 +38,7 @@ class HomePage extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('Form Input', style: TextStyle(fontSize: 20),),
+        title: Text('List View Builder', style: TextStyle(fontSize: 20),),
         backgroundColor: Colors.deepOrangeAccent,
 
         centerTitle: false,
@@ -68,10 +48,10 @@ class HomePage extends StatelessWidget {
             margin: EdgeInsets.all(7),
             padding: EdgeInsets.all(0),
             decoration: BoxDecoration(
-              color: Colors.white,
+              color: Colors.black45,
               borderRadius: BorderRadius.circular(10),
             ),
-              child: IconButton(onPressed: (){}, icon: Icon(Icons.add_a_photo_outlined), color: Colors.deepPurple,)
+              child: IconButton(onPressed: (){}, icon: Icon(Icons.shopping_cart), color: Colors.white,)
           ),
         ],
       ),
@@ -83,62 +63,8 @@ class HomePage extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
-                Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 8, vertical: 10),
-                  child: TextField(
-                    keyboardType: TextInputType.text,
-                    decoration: InputDecoration(
-                      labelText: "First name",
-                      border: OutlineInputBorder(),
-                      focusedBorder: OutlineInputBorder(
-                        borderSide: BorderSide(color: Colors.deepOrangeAccent),
-                        borderRadius: BorderRadius.all(Radius.circular(15)),
-                      ),
-                    ),
-                  ),
-                ),
-                Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 8, vertical: 10),
-                  child: TextField(
-                    keyboardType: TextInputType.text,
-                    decoration: InputDecoration(
-                      labelText: "Last Name",
-                      border: OutlineInputBorder(),
-                    ),
-                  ),
-                ),
-                Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 8, vertical: 10),
-                  child: TextField(
-                    keyboardType: TextInputType.phone,
-                    decoration: InputDecoration(
-                      labelText: "Enter your Phone",
-                      border: OutlineInputBorder(),
-                    ),
-                  ),
-                ),
-                Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 8, vertical: 10),
-                  child: TextField(
-                    keyboardType: TextInputType.emailAddress,
-                    decoration: InputDecoration(
-                      labelText: "Enter your Email",
-                      border: OutlineInputBorder(),
-                    ),
-                  ),
-                ),
 
-                Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 8, vertical: 10),
-                  child: ElevatedButton(
-                      onPressed: (){
-                        myAlertDialog(context);
-                      },
-                      //icon: Icon(Icons.card_travel)
-                      style: styleOne,
-                      child: Text('Submit')
-                  ),
-                ),
+
               ],
             ),
           ),
