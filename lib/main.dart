@@ -68,7 +68,7 @@ class HomePage extends StatelessWidget{
           itemBuilder: (context, index){
             return GestureDetector(
               onTap: () {
-
+                print(myItem[index]['title']);
               },
               child: Container(
                 margin: EdgeInsets.all(8.0),
