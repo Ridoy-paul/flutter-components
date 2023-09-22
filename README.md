@@ -1,2 +1,2 @@
 # Flutter Grid View Builder:
-![Grid View Builder](images/form-input.png)
+![Grid View Builder](images/grid-view-output.png)
