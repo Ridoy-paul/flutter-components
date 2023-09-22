@@ -46,8 +46,8 @@ class HomePage extends StatelessWidget{
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('List View Builder', style: TextStyle(fontSize: 20),),
-        backgroundColor: Colors.pink,
+        title: Text('Grid View Builder', style: TextStyle(fontSize: 20),),
+        backgroundColor: Colors.deepPurple,
         centerTitle: false,
         leading: Icon(Icons.menu),
         actions: [
@@ -58,12 +58,16 @@ class HomePage extends StatelessWidget{
               color: Colors.black45,
               borderRadius: BorderRadius.circular(10),
             ),
-              child: IconButton(onPressed: (){}, icon: Icon(Icons.shopping_cart), color: Colors.white,)
+              child: IconButton(onPressed: (){}, icon: Icon(Icons.add_a_photo), color: Colors.white,)
           ),
         ],
       ),
 
-      body: ListView.builder(
+      body: GridView.builder(
+          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 3,
+            crossAxisSpacing: 3
+          ),
           itemCount: myItem.length,
           itemBuilder: (context, index){
             return GestureDetector(
