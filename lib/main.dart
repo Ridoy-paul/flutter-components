@@ -70,6 +70,9 @@ class HomePage extends StatelessWidget{
               onTap: () {
                 print(myItem[index]['title']);
               },
+              onDoubleTap: () {
+                print("hello double Tap");
+              },
               child: Container(
                 margin: EdgeInsets.all(8.0),
                 width: double.infinity,
