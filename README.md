@@ -1,2 +1,2 @@
-# Flutter Grid View Builder:
+# Flutter Navigation:
 ![Grid View Builder](images/grid-view-output.png)

@@ -11,67 +11,32 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
         debugShowCheckedModeBanner: false,
-        home: HomePage()
+        home: HomePage(),
+        theme: ThemeData(
+        elevatedButtonTheme: ElevatedButtonThemeData(
+          style: ElevatedButton.styleFrom(
+            backgroundColor: Colors.pink,
+            foregroundColor: Colors.white,
+            padding: EdgeInsets.symmetric(vertical: 10, horizontal: 15),
+            textStyle: TextStyle(
+              letterSpacing: 2,
+              fontSize: 15.0,
+            ),
+          ),
+        ),
+        ),
     );
   }
 }
 
 class HomePage extends StatelessWidget{
 
-  var myItem = [
-    {"img" : "https://cdn-ipieb.nitrocdn.com/XUuAIAbfSYJmvfScsdokbEdfsfJmcNEb/assets/images/optimized/rev-9f5d252/wp-content/uploads/2023/05/B2.png", "title" : "Ridoy Paul"},
-    {"img" : "https://cdn-ipieb.nitrocdn.com/XUuAIAbfSYJmvfScsdokbEdfsfJmcNEb/assets/images/optimized/rev-9f5d252/wp-content/uploads/2023/05/Untitled-design-2.jpg", "title" : "Jago news"},
-    {"img" : "https://cdn-ipieb.nitrocdn.com/XUuAIAbfSYJmvfScsdokbEdfsfJmcNEb/assets/images/optimized/rev-9f5d252/wp-content/uploads/2023/05/Untitled-design-1.jpg", "title" : "Somoy News"},
-    {"img" : "https://cdn-ipieb.nitrocdn.com/XUuAIAbfSYJmvfScsdokbEdfsfJmcNEb/assets/images/optimized/rev-9f5d252/wp-content/uploads/2023/05/Untitled-design-7.jpg", "title" : "Nasa"},
-    {"img" : "https://cdn-ipieb.nitrocdn.com/XUuAIAbfSYJmvfScsdokbEdfsfJmcNEb/assets/images/optimized/rev-9f5d252/wp-content/uploads/2023/05/Untitled-design-4.jpg", "title" : "Basis Soft Expo."},
-    {"img" : "https://cdn-ipieb.nitrocdn.com/XUuAIAbfSYJmvfScsdokbEdfsfJmcNEb/assets/images/optimized/rev-9f5d252/wp-content/uploads/2023/05/Untitled-design-6.jpg", "title" : "Sodesh Bidesh"},
-    {"img" : "https://cdn-ipieb.nitrocdn.com/XUuAIAbfSYJmvfScsdokbEdfsfJmcNEb/assets/images/optimized/rev-9f5d252/wp-content/uploads/2023/05/B2.png", "title" : "Ridoy Paul"},
-    {"img" : "https://cdn-ipieb.nitrocdn.com/XUuAIAbfSYJmvfScsdokbEdfsfJmcNEb/assets/images/optimized/rev-9f5d252/wp-content/uploads/2023/05/Untitled-design-2.jpg", "title" : "Jago news"},
-    {"img" : "https://cdn-ipieb.nitrocdn.com/XUuAIAbfSYJmvfScsdokbEdfsfJmcNEb/assets/images/optimized/rev-9f5d252/wp-content/uploads/2023/05/Untitled-design-1.jpg", "title" : "Somoy News"},
-    {"img" : "https://cdn-ipieb.nitrocdn.com/XUuAIAbfSYJmvfScsdokbEdfsfJmcNEb/assets/images/optimized/rev-9f5d252/wp-content/uploads/2023/05/Untitled-design-7.jpg", "title" : "Nasa"},
-    {"img" : "https://cdn-ipieb.nitrocdn.com/XUuAIAbfSYJmvfScsdokbEdfsfJmcNEb/assets/images/optimized/rev-9f5d252/wp-content/uploads/2023/05/Untitled-design-4.jpg", "title" : "Basis Soft Expo."},
-    {"img" : "https://cdn-ipieb.nitrocdn.com/XUuAIAbfSYJmvfScsdokbEdfsfJmcNEb/assets/images/optimized/rev-9f5d252/wp-content/uploads/2023/05/Untitled-design-6.jpg", "title" : "Sodesh Bidesh"},
-    {"img" : "https://cdn-ipieb.nitrocdn.com/XUuAIAbfSYJmvfScsdokbEdfsfJmcNEb/assets/images/optimized/rev-9f5d252/wp-content/uploads/2023/05/B2.png", "title" : "Ridoy Paul"},
-    {"img" : "https://cdn-ipieb.nitrocdn.com/XUuAIAbfSYJmvfScsdokbEdfsfJmcNEb/assets/images/optimized/rev-9f5d252/wp-content/uploads/2023/05/Untitled-design-2.jpg", "title" : "Jago news"},
-    {"img" : "https://cdn-ipieb.nitrocdn.com/XUuAIAbfSYJmvfScsdokbEdfsfJmcNEb/assets/images/optimized/rev-9f5d252/wp-content/uploads/2023/05/Untitled-design-1.jpg", "title" : "Somoy News"},
-    {"img" : "https://cdn-ipieb.nitrocdn.com/XUuAIAbfSYJmvfScsdokbEdfsfJmcNEb/assets/images/optimized/rev-9f5d252/wp-content/uploads/2023/05/Untitled-design-7.jpg", "title" : "Nasa"},
-    {"img" : "https://cdn-ipieb.nitrocdn.com/XUuAIAbfSYJmvfScsdokbEdfsfJmcNEb/assets/images/optimized/rev-9f5d252/wp-content/uploads/2023/05/Untitled-design-4.jpg", "title" : "Basis Soft Expo."},
-    {"img" : "https://cdn-ipieb.nitrocdn.com/XUuAIAbfSYJmvfScsdokbEdfsfJmcNEb/assets/images/optimized/rev-9f5d252/wp-content/uploads/2023/05/Untitled-design-6.jpg", "title" : "Sodesh Bidesh"},
-    {"img" : "https://cdn-ipieb.nitrocdn.com/XUuAIAbfSYJmvfScsdokbEdfsfJmcNEb/assets/images/optimized/rev-9f5d252/wp-content/uploads/2023/05/B2.png", "title" : "Ridoy Paul"},
-    {"img" : "https://cdn-ipieb.nitrocdn.com/XUuAIAbfSYJmvfScsdokbEdfsfJmcNEb/assets/images/optimized/rev-9f5d252/wp-content/uploads/2023/05/Untitled-design-2.jpg", "title" : "Jago news"},
-    {"img" : "https://cdn-ipieb.nitrocdn.com/XUuAIAbfSYJmvfScsdokbEdfsfJmcNEb/assets/images/optimized/rev-9f5d252/wp-content/uploads/2023/05/Untitled-design-1.jpg", "title" : "Somoy News"},
-    {"img" : "https://cdn-ipieb.nitrocdn.com/XUuAIAbfSYJmvfScsdokbEdfsfJmcNEb/assets/images/optimized/rev-9f5d252/wp-content/uploads/2023/05/Untitled-design-7.jpg", "title" : "Nasa"},
-    {"img" : "https://cdn-ipieb.nitrocdn.com/XUuAIAbfSYJmvfScsdokbEdfsfJmcNEb/assets/images/optimized/rev-9f5d252/wp-content/uploads/2023/05/Untitled-design-4.jpg", "title" : "Basis Soft Expo."},
-    {"img" : "https://cdn-ipieb.nitrocdn.com/XUuAIAbfSYJmvfScsdokbEdfsfJmcNEb/assets/images/optimized/rev-9f5d252/wp-content/uploads/2023/05/Untitled-design-6.jpg", "title" : "Sodesh Bidesh"},
-    {"img" : "https://cdn-ipieb.nitrocdn.com/XUuAIAbfSYJmvfScsdokbEdfsfJmcNEb/assets/images/optimized/rev-9f5d252/wp-content/uploads/2023/05/B2.png", "title" : "Ridoy Paul"},
-    {"img" : "https://cdn-ipieb.nitrocdn.com/XUuAIAbfSYJmvfScsdokbEdfsfJmcNEb/assets/images/optimized/rev-9f5d252/wp-content/uploads/2023/05/Untitled-design-2.jpg", "title" : "Jago news"},
-    {"img" : "https://cdn-ipieb.nitrocdn.com/XUuAIAbfSYJmvfScsdokbEdfsfJmcNEb/assets/images/optimized/rev-9f5d252/wp-content/uploads/2023/05/Untitled-design-1.jpg", "title" : "Somoy News"},
-    {"img" : "https://cdn-ipieb.nitrocdn.com/XUuAIAbfSYJmvfScsdokbEdfsfJmcNEb/assets/images/optimized/rev-9f5d252/wp-content/uploads/2023/05/Untitled-design-7.jpg", "title" : "Nasa"},
-    {"img" : "https://cdn-ipieb.nitrocdn.com/XUuAIAbfSYJmvfScsdokbEdfsfJmcNEb/assets/images/optimized/rev-9f5d252/wp-content/uploads/2023/05/Untitled-design-4.jpg", "title" : "Basis Soft Expo."},
-    {"img" : "https://cdn-ipieb.nitrocdn.com/XUuAIAbfSYJmvfScsdokbEdfsfJmcNEb/assets/images/optimized/rev-9f5d252/wp-content/uploads/2023/05/Untitled-design-6.jpg", "title" : "Sodesh Bidesh"},
-  ];
-
   @override
   Widget build(BuildContext context) {
-
-    ButtonStyle styleOne = ElevatedButton.styleFrom(
-      padding: EdgeInsets.fromLTRB(30, 2, 30, 2),
-      foregroundColor: Colors.white,
-      backgroundColor: Colors.deepOrangeAccent,
-      minimumSize: Size(double.infinity, 50),
-      textStyle: TextStyle(
-        letterSpacing: 2,
-        fontSize: 15,
-      ),
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(30.0),
-      )
-    );
-
     return Scaffold(
       appBar: AppBar(
-        title: Text('Grid View Builder', style: TextStyle(fontSize: 20),),
-        backgroundColor: Colors.deepPurple,
+        title: Text('Simple Navigation', style: TextStyle(fontSize: 20),),
+        backgroundColor: Colors.teal,
         centerTitle: false,
         leading: Icon(Icons.menu),
         actions: [
@@ -82,40 +47,57 @@ class HomePage extends StatelessWidget{
               color: Colors.black45,
               borderRadius: BorderRadius.circular(10),
             ),
-              child: IconButton(onPressed: (){}, icon: Icon(Icons.add_a_photo), color: Colors.white,)
+              child: IconButton(onPressed: (){}, icon: Icon(Icons.add_call), color: Colors.white,)
           ),
         ],
       ),
+      body: SafeArea(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            ElevatedButton(
+                onPressed: () {
 
-      body: GridView.builder(
-          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 3,
-            crossAxisSpacing: 3,
-            childAspectRatio: 1.4,
-          ),
-          itemCount: myItem.length,
-          itemBuilder: (context, index){
-            return GestureDetector(
-              onTap: () {
-                print(myItem[index]['title']);
-              },
-              onDoubleTap: () {
-                print("hello double Tap");
-              },
-              child: Container(
-                margin: EdgeInsets.all(8.0),
-                width: double.infinity,
-                height: 200.0,
-                child: Image.network(
-                  myItem[index]['img']!,
-                  fit: BoxFit.fill,
-                ),
-              ),
-            );
-          }
+                },
+                child: Text("Go Activity 1")
+            ),
+            SizedBox(height: 40),
+            ElevatedButton(
+                onPressed: () {
+
+                },
+                child: Text("Go Activity 2")
+            ),
+
+          ],
+        ),
       ),
     );
   }
-
 }
+
+class ActivityTwo extends StatelessWidget {
+  ActivityTwo({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Activity Page One'),
+      ),
+      body: SafeArea(
+        child: Center(
+          child: Text(
+            "Activity Page One",
+            style: TextStyle(
+              fontSize: 30,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
 
