@@ -52,24 +52,27 @@ class HomePage extends StatelessWidget{
         ],
       ),
       body: SafeArea(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            ElevatedButton(
-                onPressed: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) =>ActivityOne()));
-                },
-                child: Text("Go Activity 1")
-            ),
-            SizedBox(height: 40),
-            ElevatedButton(
-                onPressed: () {
+        child: Center(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              SizedBox(height: 40),
+              ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(context, MaterialPageRoute(builder: (context) =>ActivityOne()));
+                  },
+                  child: Text("Go Activity 1")
+              ),
+              SizedBox(height: 40),
+              ElevatedButton(
+                  onPressed: () {
 
-                },
-                child: Text("Go Activity 2")
-            ),
+                  },
+                  child: Text("Go Activity 2")
+              ),
 
-          ],
+            ],
+          ),
         ),
       ),
     );
@@ -97,9 +100,10 @@ class ActivityOne extends StatelessWidget {
                   fontWeight: FontWeight.bold,
                 ),
               ),
+              SizedBox(height: 10,),
               ElevatedButton(
                   onPressed: (){
-
+                    Navigator.pop(context);
                   },
                   child: Text("Go back"),
               ),
