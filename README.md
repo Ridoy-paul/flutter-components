@@ -1,3 +1,3 @@
-# Flutter Navigation:
-![Simple Navigator output 1](images/simple-navigation-output-1.png)
-![Simple Navigator output 2](images/simple-output.png)
+# Flutter Dynamic Navigation:
+![Simple Navigator output 1](images/dynamic-navigation-output.png)
+![Simple Navigator output 2](images/output-2.png)

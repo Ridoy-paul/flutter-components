@@ -59,7 +59,7 @@ class HomePage extends StatelessWidget{
               SizedBox(height: 40),
               ElevatedButton(
                   onPressed: () {
-                    Navigator.push(context, MaterialPageRoute(builder: (context) =>ActivityOne()));
+                    Navigator.push(context, MaterialPageRoute(builder: (context) =>ActivityOne("This is from Activity one")));
                   },
                   child: Text("Go Activity 1")
               ),
@@ -80,13 +80,17 @@ class HomePage extends StatelessWidget{
 }
 
 class ActivityOne extends StatelessWidget {
-  ActivityOne({super.key});
+  String msg;
+  ActivityOne(
+      this.msg,
+      {super.key}
+      );
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Activity Page One'),
+        title: Text(msg),
       ),
       body: SafeArea(
         child: Center(
