@@ -57,7 +57,7 @@ class HomePage extends StatelessWidget{
           children: [
             ElevatedButton(
                 onPressed: () {
-
+                  Navigator.push(context, MaterialPageRoute(builder: (context) =>ActivityOne()));
                 },
                 child: Text("Go Activity 1")
             ),
@@ -76,8 +76,8 @@ class HomePage extends StatelessWidget{
   }
 }
 
-class ActivityTwo extends StatelessWidget {
-  ActivityTwo({super.key});
+class ActivityOne extends StatelessWidget {
+  ActivityOne({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -87,12 +87,23 @@ class ActivityTwo extends StatelessWidget {
       ),
       body: SafeArea(
         child: Center(
-          child: Text(
-            "Activity Page One",
-            style: TextStyle(
-              fontSize: 30,
-              fontWeight: FontWeight.bold,
-            ),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Text(
+                "Activity Page One",
+                style: TextStyle(
+                  fontSize: 30,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              ElevatedButton(
+                  onPressed: (){
+
+                  },
+                  child: Text("Go back"),
+              ),
+            ],
           ),
         ),
       ),
