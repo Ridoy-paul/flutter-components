@@ -5,7 +5,7 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+   MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -30,13 +30,12 @@ class MyApp extends StatelessWidget {
 }
 
 class HomePage extends StatelessWidget{
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Simple Navigation', style: TextStyle(fontSize: 20),),
-        backgroundColor: Colors.teal,
+        title: Text('Card in Flutter', style: TextStyle(fontSize: 20),),
+        backgroundColor: Colors.purple,
         centerTitle: false,
         leading: Icon(Icons.menu),
         actions: [
@@ -52,71 +51,66 @@ class HomePage extends StatelessWidget{
         ],
       ),
       body: SafeArea(
-        child: Center(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              SizedBox(height: 40),
-              ElevatedButton(
-                  onPressed: () {
-                    Navigator.push(context, MaterialPageRoute(builder: (context) =>ActivityOne("This is from Activity one")));
-                  },
-                  child: Text("Go Activity 1")
-              ),
-              SizedBox(height: 40),
-              ElevatedButton(
-                  onPressed: () {
-
-                  },
-                  child: Text("Go Activity 2")
-              ),
-
-            ],
-          ),
-        ),
-      ),
-    );
-  }
-}
-
-class ActivityOne extends StatelessWidget {
-  String msg;
-  ActivityOne(
-      this.msg,
-      {super.key}
-      );
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(msg),
-      ),
-      body: SafeArea(
-        child: Center(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Text(
-                "Activity Page One",
-                style: TextStyle(
-                  fontSize: 30,
-                  fontWeight: FontWeight.bold,
+        child: SingleChildScrollView(
+          child: Center(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Padding(
+                  padding: EdgeInsets.all(5),
+                  child: Card(
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    color: Colors.deepOrange,
+                    elevation: 4,
+                    shadowColor: Colors.black,
+                    child: SizedBox(
+                      width: double.infinity,
+                      height: 200,
+                      child: Center(child: Text("This is Card 1", style: TextStyle(color: Colors.white, fontSize: 30, fontWeight: FontWeight.bold),),),
+                    ),
+                  ),
                 ),
-              ),
-              SizedBox(height: 10,),
-              ElevatedButton(
-                  onPressed: (){
-                    Navigator.pop(context);
-                  },
-                  child: Text("Go back"),
-              ),
-            ],
+                Padding(
+                  padding: EdgeInsets.all(5),
+                  child: Card(
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    color: Colors.purple,
+                    elevation: 4,
+                    shadowColor: Colors.black,
+                    child: SizedBox(
+                      width: double.infinity,
+                      height: 200,
+                      child: Center(child: Text("This is Card 2", style: TextStyle(color: Colors.white, fontSize: 30, fontWeight: FontWeight.bold),),),
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.all(5),
+                  child: Card(
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    color: Colors.lightBlue,
+                    elevation: 4,
+                    shadowColor: Colors.black,
+                    child: SizedBox(
+                      width: double.infinity,
+                      height: 200,
+                      child: Center(child: Text("This is Card 3", style: TextStyle(color: Colors.white, fontSize: 30, fontWeight: FontWeight.bold),),),
+                    ),
+                  ),
+                ),
+
+
+              ],
+            ),
           ),
         ),
       ),
     );
   }
 }
-
-
