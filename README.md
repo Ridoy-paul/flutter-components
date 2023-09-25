@@ -1,2 +1,2 @@
 # Flutter Card:
-![Simple Navigator output 1](images/card-output.png)
+![Aspect Ratio](images/aspect-ratio.png)
