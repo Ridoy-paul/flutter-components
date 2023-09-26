@@ -1,2 +1,2 @@
-# Flutter Card:
-![Aspect Ratio](images/aspect-ratio.png)
+# Flutter MediaQuery:
+![Media Query](images/mediaQuery-output.png)
