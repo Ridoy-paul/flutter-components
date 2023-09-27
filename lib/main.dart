@@ -1,6 +1,6 @@
 import 'dart:ui';
-
 import 'package:flutter/material.dart';
+import 'style.dart';
 
 void main(){
   return runApp(MyApp());
@@ -23,65 +23,13 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.sizeOf(context);
-    Orientation displayOrientation = MediaQuery.orientationOf(context);
-    List<DisplayFeature> displayFeatures = MediaQuery.displayFeaturesOf(context);
+
     return Scaffold(
       appBar: AppBar(
-        title: Text('Media Query in Flutter'),
+        title: Text('Responsive Grid'),
       ),
       body: SafeArea(
-        child: Center(
-          child: Column(
-
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text("Screen Size: ${size}"),
-              Text("Width: ${size.width}"),
-              Text("Height: ${size.height}"),
-              Text("Aspect Ratio: ${size.aspectRatio}"),
-              Text("Flipped Info: ${size.flipped}"),
-              Text("Orientation: ${displayOrientation}"),
-              Text("Display Features: ${displayFeatures}"),
-              SizedBox(height: 20,),
-              Container(
-                child: SizedBox(
-                  child: Row(
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.all(5.0),
-                        child: SizedBox(
-                          width: MediaQuery.sizeOf(context).width/2.2,
-                          height: MediaQuery.sizeOf(context).width/2,
-                          child: Card(
-                            color: Colors.deepOrange,
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(10),
-                            ),
-                          ),
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.all(5.0),
-                        child: SizedBox(
-                          width: MediaQuery.sizeOf(context).width/2.2,
-                          height: MediaQuery.sizeOf(context).width/2,
-                          child: Card(
-                            color: Colors.deepOrange,
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(10),
-                            ),
-                          ),
-                        ),
-                      ),
-
-                    ],
-                  ),
-                ),
-              )
-            ],
-          )
-        ),
+        child: Text("hello"),
       ),
     );
   }
