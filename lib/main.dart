@@ -1,90 +1,50 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bootstrap/flutter_bootstrap.dart';
 
-void main() {
-  runApp(MyApp());
+void main() => runApp(MyApp());
+
+class MyApp extends StatefulWidget {
+  MyApp({super.key});
+
+  @override
+  State<MyApp> createState() => _MyAppState();
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
+class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: HomePage(),
+      home: HomeScreen(),
     );
   }
 }
 
-class HomePage extends StatelessWidget {
-   HomePage({super.key});
+class HomeScreen extends StatefulWidget {
+  const HomeScreen({super.key});
 
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Flutter Bootstrap"),
-        backgroundColor: Colors.deepOrange,
+        title: Text("Stateful Widget LifeCycle"),
       ),
       body: SafeArea(
-        child: SingleChildScrollView(
-          child: BootstrapContainer(
-            padding: EdgeInsets.symmetric(vertical: 5, horizontal: 0),
-            fluid: true,
-            children: <Widget>[
-              BootstrapRow(
-                  children: [
-                    BootstrapCol(
-                      sizes: 'col-6 col-sm-6 col-md-4 col-xl-4',
-                      child: ContentWidget(
-                        color: Colors.deepOrange,
-                        text: 'col-6 col-sm-6',
-                      ),
-                    ),
-                    BootstrapCol(
-                      sizes: 'col-6 col-sm-6 col-md-4 col-xl-4',
-                      child: ContentWidget(
-                        color: Colors.deepOrange,
-                        text: 'col-6 col-sm-6',
-                      ),
-                    ),
-                    BootstrapCol(
-                      sizes: 'col-12 col-sm-6 col-md-4 col-xl-4',
-                      child: ContentWidget(
-                        color: Colors.deepOrange,
-                        text: 'col-12 col-sm-6',
-                      ),
-                    ),
-
-
-                  ],
-              ),
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            //mainAxisAlignment: MainAxisAlignment.end,
+            children: [
+              Text("1) First Call: "),
             ],
           ),
         ),
       ),
-    );
-  }
-}
-
-class ContentWidget extends StatelessWidget {
-  const ContentWidget({
-    Key? key,
-    required this.text,
-    required this.color,
-  }) : super(key: key);
-
-  final String text;
-  final Color color;
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      margin: EdgeInsets.fromLTRB(0, 0, 0, 5),
-      height: 50,
-      color: color,
-      child: Center(child: Text(text, style: TextStyle(color: Colors.white),)),
     );
   }
 }
