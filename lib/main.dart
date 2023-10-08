@@ -28,69 +28,35 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
 
-  int count = 0;
-
-  void initState() {
-    print("Init State");
-    count++;
-    super.initState();
-  }
-
-  @override
-  void didChangeDependencies() {
-    print("Changed Dependencies");
-    super.didChangeDependencies();
-  }
-
-  @override
-  void didUpdateWidget(covariant HomeScreen oldWidget) {
-    // TODO: implement didUpdateWidget
-    super.didUpdateWidget(oldWidget);
-  }
-
-  @override
-  void deactivate() {
-    // TODO: implement deactivate
-    super.deactivate();
-  }
-
-  @override
-  void dispose() {
-    // TODO: implement dispose
-    super.dispose();
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Stateful Widget LifeCycle"),
+        title: Text("Layout Builder"),
+        backgroundColor: Colors.deepOrange,
       ),
       body: SafeArea(
-        child: SingleChildScrollView(
-          child: Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              //mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                Image.asset("images/lifecycle.png"),
-                Image.asset("images/state-class-function-1.jpg"),
-
-
-
-              ],
-            ),
-          ),
+        child: LayoutBuilder(
+          builder: (BuildContext context, BoxConstraints constants) {
+            if(constants.maxWidth < 600) {
+              return Container(
+                height: 300,
+                width: 300,
+                color: Colors.deepPurple,
+              );
+            }
+            else {
+              return Center(
+                child: Container(
+                  height: 300,
+                  width: MediaQuery.sizeOf(context).width * 0.9,
+                  color: Colors.deepPurple,
+                  
+                ),
+              );
+            }
+          },
         ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          setState(() {
-            count++;
-          });
-        },
-        child: Icon(Icons.add),
       ),
     );
   }
