@@ -42,16 +42,23 @@ class _HomeScreenState extends State<HomeScreen> {
               return Container(
                 height: 300,
                 width: 300,
-                color: Colors.deepPurple,
+                //color: Colors.deepPurple,
+                decoration: BoxDecoration(
+                  color: Colors.deepPurple,
+                  borderRadius: BorderRadius.only(topRight: Radius.circular(0), bottomRight: Radius.circular(50.0)),
+                ),
               );
             }
             else {
               return Center(
                 child: Container(
                   height: 300,
-                  width: MediaQuery.sizeOf(context).width * 0.9,
-                  color: Colors.deepPurple,
-                  
+                  width: MediaQuery.of(context).size.width * 0.9,
+                  decoration: BoxDecoration(
+                    color: Colors.deepOrange,
+                    borderRadius: BorderRadius.circular(30),
+                  ),
+
                 ),
               );
             }
