@@ -27,7 +27,6 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -38,18 +37,30 @@ class _HomeScreenState extends State<HomeScreen> {
       body: SafeArea(
         child: LayoutBuilder(
           builder: (BuildContext context, BoxConstraints constants) {
-            if(constants.maxWidth < 600) {
+            /// for mobile device
+            if (constants.maxWidth < 600) {
               return Container(
                 height: 300,
                 width: 300,
-                //color: Colors.deepPurple,
                 decoration: BoxDecoration(
                   color: Colors.deepPurple,
-                  borderRadius: BorderRadius.only(topRight: Radius.circular(0), bottomRight: Radius.circular(50.0)),
+                  borderRadius: BorderRadius.only(
+                      topRight: Radius.circular(0),
+                      bottomRight: Radius.circular(50.0)),
+                ),
+                child: Align(
+                  alignment: Alignment.center,
+                  child: Text(
+                    "This is Mobile Device, MaxWidth 600px",
+                    style: TextStyle(
+                      fontSize: 15,
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
                 ),
               );
-            }
-            else {
+            } else {
               return Center(
                 child: Container(
                   height: 300,
@@ -58,7 +69,16 @@ class _HomeScreenState extends State<HomeScreen> {
                     color: Colors.deepOrange,
                     borderRadius: BorderRadius.circular(30),
                   ),
-
+                  child: Center(
+                    child: Text(
+                      "This is Mobile Device, MinWidth 600px",
+                      style: TextStyle(
+                        fontSize: 30,
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
                 ),
               );
             }
@@ -68,4 +88,3 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 }
-
